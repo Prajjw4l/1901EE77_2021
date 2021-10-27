@@ -10,7 +10,8 @@ def get_final_name(s_name, season_num, episode_num, episode_name, f_extension):
     new_file_name += " Episode " + episode_num
     new_file_name += episode_name
     new_file_name += f_extension
-
+    return new_file_name
+    
 def regex_renamer():
 
     #input from the user
@@ -52,5 +53,6 @@ def regex_renamer():
             e_len += 1
         fin_name = get_final_name(series[webseries_num], season_num, episode_num, episode_name, f_extension)
         os.rename(os.path.join(path_num, f), os.path.join(path_num, fin_name))
+
 
 regex_renamer()
